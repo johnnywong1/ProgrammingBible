@@ -3,7 +3,7 @@ Given a set of diferent coins, how would you take the fewest amounts of coints t
 
 ## Solution just giving back the number of coins
 ```
-oins=[1,5,10,11,25]
+coins=[1,5,10,11,25]
 
 def fewCoin(value, coinset):
   memory = {0:([[]])}
