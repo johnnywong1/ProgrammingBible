@@ -80,3 +80,35 @@ Depth-first search solution
         return false;
     }
 ```
+
+Breath-first search solution:
+```
+    public boolean hasPath(int[][] maze, int[] start, int[] destination) {
+        //BFS approach: move in all directions at every step
+        int[][] directions = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+        boolean[][] visited = new boolean[maze.length][maze[0].length];
+        Queue<int[]> queue = new LinkedList<>();    //coordinates
+        queue.add(start);
+        visited[start[0]][start[1]] = true;
+        while(!queue.isEmpty()){
+            int[] currLoc = queue.remove();
+            if(currLoc[0] == destination[0] && currLoc[1] == destination[1]){
+                return true;    //reached destination
+            }
+            for(int[] direction : directions){
+                int x = currLoc[0] + direction[0];
+                int y = currLoc[1] + direction[1];
+                //walk
+                while(x >= 0 && y >= 0 && x < maze.length && y < maze[0].length && maze[x][y] == 0){
+                    x += direction[0];
+                    y += direction[1];
+                }
+                if(!visited[x - direction[0]][y - direction[1]]){
+                    queue.add(new int[]{x - direction[0], y - direction[1]});
+                    visited[x - direction[0]][y - direction[1]] = true;
+                }
+            }
+        }
+        return false;
+    }
+```
