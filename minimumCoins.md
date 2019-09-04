@@ -1,7 +1,7 @@
 # Minimum Coins Problem
 Given a set of diferent coins, how would you take the fewest amounts of coints to reach a certain value.
 
-## Solution just giving back the number of coins
+## Not Solution but just giving back combinations to achieve value
 ```
 coins=[1,5,10,11,25]
 
