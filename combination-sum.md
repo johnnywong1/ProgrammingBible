@@ -1,5 +1,5 @@
 # Combination Sum 
-Java DFS approach:
+Java backtracking approach:
 ```
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
         //unique combinations that lead to sum

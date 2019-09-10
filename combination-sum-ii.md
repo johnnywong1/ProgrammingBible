@@ -1,5 +1,5 @@
 # Combination Sum II
-Java DFS approach:
+Java backtracking approach:
 ```
     public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
         //number re-use not allowed
