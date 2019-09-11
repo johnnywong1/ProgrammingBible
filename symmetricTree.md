@@ -33,3 +33,71 @@ class Solution {
     }
 }
 ```
+
+## Solution 2
+Push each half into a list and then later check the lists.
+Runtime: 2 ms
+Memory Usage: 38.6 MB
+
+```
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        List<Integer> left = new LinkedList<Integer>();
+        List<Integer> right = new LinkedList<Integer>();
+        
+        if(root!=null){
+            getLeft(left, root.left);
+            getRight(right, root.right);
+        }
+        
+        if(left.equals(right)){ // for linked lists, use .equals()
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    private void getLeft(List<Integer> left, TreeNode root){
+        if(root!=null){
+            left.add(root.val);
+            if(root.left==null){
+                left.add(-1);
+            }else{
+                getLeft(left,root.left);
+            }
+            if(root.right==null){
+                left.add(-1);
+            }else{
+                getLeft(left,root.right);
+            }   
+        }
+        
+    }
+    
+    private void getRight(List<Integer> right, TreeNode root){
+        if(root!=null){
+            right.add(root.val);
+            if(root.right==null){
+                right.add(-1);
+            }else{
+                getRight(right,root.right);
+            }
+            if(root.left==null){
+                right.add(-1);
+            }else{
+                getRight(right,root.left);
+            }   
+        }
+    }  
+}
+```
