@@ -5,7 +5,8 @@ Given a binary tree, check whether it is a mirror of itself (ie, symmetric aroun
 ## Solution
 Thanks to Dennis
 Recursively check if the values are identical
-
+Runtime: 0 ms
+Memory Usage: 37.1 MB
 
 
 ```
