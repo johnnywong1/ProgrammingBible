@@ -40,7 +40,7 @@ FAILED WITH 2 ATTEMPTS
 
 Passing Java solution:
 ```
-//use first number in every row and col as flag [isZero]. Note: will need to determine if first row and col should be set to zeroes in the end
+//use first number in every row and col as flag [isZero]. Note: will need to determine if first row and col should be set to zeroes in the end. O(1) space + O(mn) time
   public void setZeroes(int[][] matrix) {
     Boolean isCol = false;
     int R = matrix.length;
