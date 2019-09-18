@@ -19,6 +19,9 @@ public ListNode detectCycle(ListNode head) {
 }
 ```
 FAILED. UNCLEAR PROBLEM DESCRIPTION
+
+Useful link: https://www.cnblogs.com/hiddenfox/p/3408931.html
+
 Correct solution:
 ```
 /*
