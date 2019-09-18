@@ -7,7 +7,7 @@ getHeight or height has the following parameter(s):
 * root: a reference to the root of a binary tree
 ** Note: The Height of binary tree with single node is taken as zero
 
-`
+```
 def height(root):
     if(root.left is None and root.right is None):
         return 0
@@ -18,4 +18,4 @@ def height(root):
         if(root.right is not None):
             right = right + height(root.right)
         return max(left, right)
-`
+```
