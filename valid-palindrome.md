@@ -23,7 +23,7 @@ Draft Java solution (iterative approach):
         return true;
     }
 ```
-PASSED.
+PASSED after multiple attempts.
 More efficient solution: regex on input string `s`, compare using `StringBuilder.reverse()`
 Sample code:
 ```
