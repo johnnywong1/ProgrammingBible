@@ -3,7 +3,7 @@ https://leetcode.com/problems/flood-fill/
 
 ## Solution
 Recursion, fastest
-Just recurse on the four sides of the initial square. Break if it goes past the bounds OR if not the right init color 
+Just recurse on the four sides of the initial square. Break if it goes past the bounds OR if not the right init color  
 Note: To break the recursion after changing the color we break if the square is the same color as the new color, which means it was recently filled
 
 
