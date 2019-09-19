@@ -1,4 +1,5 @@
 # Merge Two Sorted Array
+https://leetcode.com/problems/merge-sorted-array
 Naive solution, `O(n)` space:
 ```
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
@@ -46,3 +47,16 @@ Naive solution, `O(n)` space:
         System.arraycopy(nums2, 0, nums1, 0, ptr2 + 1);
     }
 ```
+Use Java collections sort function
+
+```
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        for(int i=m,j=0;i<nums1.length;i++,j++){
+            nums1[i]=nums2[j]; //fill the empty part of nums1 with nums2, out of order
+        }
+        Arrays.sort(nums1); //call sort
+    }
+}
+```
+
