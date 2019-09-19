@@ -20,4 +20,4 @@ Draft Java solution:
         return sPtr == s.length(); //subsequence found   
     }
 ```
-PASSED
+PASSED  
