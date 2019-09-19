@@ -40,5 +40,41 @@ FAILED
 
 Passing solution (need to consider intervals such as [1, 6] and [2, 5] -> requires sorting of input intervals by starting time):
 ```
+    private static class IntervalComparator implements Comparator<int[]>{
+        @Override
+        public int compare(int[] o1, int[] o2) {
+            return o1[0] - o2[0];
+        }
+    }
 
+    public static int[][] merge(int[][] intervals){
+        List<int[]> input = new ArrayList<>();
+        for(int[] interval : intervals){
+            input.add(interval);
+        }
+        //sort intervals by starting time
+        Collections.sort(input, new IntervalComparator());
+        List<int[]> temp = new ArrayList<>();
+        for(int[] interval: input){
+            if(temp.size() == 0 || temp.get(temp.size() - 1)[1] < interval[0]){
+                //append to result
+                int[] newInterval = new int[2];
+                newInterval[0] = interval[0];
+                newInterval[1] = interval[1];
+                temp.add(newInterval);
+            }else{
+                //directly modify temp result...
+                temp.get(temp.size() - 1)[1] = Math.max(temp.get(temp.size() - 1)[1], interval[1]);
+            }
+        }
+        //make result
+        int[][] result = new int[temp.size()][2];
+        for(int i = 0; i < temp.size(); ++ i){
+            result[i][0] = temp.get(i)[0];
+            result[i][1] = temp.get(i)[1];
+        }
+
+        return result;
+    }
 ```
+https://leetcode.com/problems/merge-intervals/solution/
