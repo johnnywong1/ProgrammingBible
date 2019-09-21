@@ -57,7 +57,7 @@
         }
     }
 ```
-### Iterative approach (with one stack)
+### Iterative approach (single stack)
 ```
     public List<Integer> preorderTraversal(TreeNode root){
 
@@ -102,7 +102,7 @@
         }
     }
 ```
-### Iterative approach (with two stacks)
+### Iterative approach (dual stack)
 ```
     public List<Integer> postorderTraversal(TreeNode root){
         List<Integer> result = new ArrayList();
@@ -129,4 +129,70 @@
     }
 ```
 
-
+## Level order traversal: level by level
+### Iterative approach (dual queue)
+```
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        //dual queue approach
+        List<List<Integer>> result = new ArrayList();
+        if(root == null){
+            return result;
+        }
+        LinkedList<TreeNode> q1 = new LinkedList();
+        LinkedList<TreeNode> q2 = new LinkedList();
+        List<Integer> temp = new ArrayList();
+        q1.add(root);
+        while(!q1.isEmpty()){
+            TreeNode curr = q1.pop();
+            temp.add(curr.val);
+            if(curr.left != null){
+                q2.add(curr.left);
+            }
+            if(curr.right != null){
+                q2.add(curr.right);
+            }
+            if(q1.isEmpty()){
+                result.add(new ArrayList(temp));
+                temp.clear();
+                q1.clear();
+                for(TreeNode node : q2){
+                    q1.add(node);
+                }
+                q2.clear();
+            }
+        }
+        return result;
+    }
+```
+### Iterative approach (single queue - potentially bad logic)
+```
+    public List<List<Integer>> levelOrder(TreeNode root){
+        List<List<Integer>> result = new ArrayList();
+        if(root == null){
+            return result;
+        }
+        LinkedList<TreeNode> queue = new LinkedList();
+        queue.add(root);
+        while(true){
+            int cnt = queue.size();
+            List<Integer> temp = new ArrayList();
+            if(cnt == 0){
+                break;
+            }
+            while(cnt > 0){
+                TreeNode curr = queue.pop();
+                temp.add(curr.val);
+                if(curr.left != null){
+                    queue.add(curr.left);
+                }
+                if(curr.right != null){
+                    queue.add(curr.right);
+                }
+                -- cnt;
+            }
+            result.add(new ArrayList(temp));
+            temp.clear();
+        }
+        return result;
+    }
+```
