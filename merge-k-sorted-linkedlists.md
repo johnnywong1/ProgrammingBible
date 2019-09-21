@@ -3,6 +3,8 @@ Draft Java solution:
 ```
     public ListNode mergeKLists(ListNode[] lists) {
 
+        //D & C approach
+
         if(lists.length == 0){
             return null;
         }
