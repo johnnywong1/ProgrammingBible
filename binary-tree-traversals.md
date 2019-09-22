@@ -18,7 +18,7 @@
         }
     }
 ```
-### Iterative approach (with one stack)
+### Iterative approach (single stack)
 ```
     public List<Integer> inorderTraversal(TreeNode root){
         List<Integer> result = new ArrayList();
