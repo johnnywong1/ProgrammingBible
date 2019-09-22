@@ -1,4 +1,4 @@
-# Binary Tree Traversals
+ # Binary Tree Traversals
 ## Inorder travesal: left -> root -> right
 ### Recursive approach
 ```
