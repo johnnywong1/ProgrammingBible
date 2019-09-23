@@ -49,3 +49,5 @@ More efficient solution (iterative inorder traversal with single stack):
     }
 ```
 Further optimization: use single `TreeNode` to keep track of `temp.get(temp.size() - 1)`
+
+Same method for finding predecessor
