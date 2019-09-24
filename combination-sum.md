@@ -7,11 +7,11 @@ Java backtracking approach:
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> temp = new ArrayList<>();
         Arrays.sort(candidates);
-        DFS(result, temp, candidates, 0, target);
+        backtrack(result, temp, candidates, 0, target);
         return result;
     }
 
-    public static void DFS(List<List<Integer>> result, List<Integer> temp, int[] candidates, int i, int target){
+    public static void backtrack(List<List<Integer>> result, List<Integer> temp, int[] candidates, int i, int target){
         if(target == 0){
             //save an argument!
             result.add(new ArrayList<>(temp));
